@@ -5,7 +5,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 
-# Capa 
+# Capa densa
 
 capa = layers.Dense()
 print("Pesos: \n", capa.weights)
