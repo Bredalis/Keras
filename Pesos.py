@@ -1,5 +1,5 @@
 
-# Librerias
+# Librerías
 
 import tensorflow as tf
 from tensorflow import keras
