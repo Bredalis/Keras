@@ -1,40 +1,30 @@
 
 # Librerías
-
 import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
+from tensorflow.keras import layers, Sequential
 
-# Modelo secuencial
-# de 3 capas profundas
+# Definir modelo secuencial con 3 capas
+modelo = Sequential([
+	layers.Dense(2, activation = "relu", name = "layer1"),
+	layers.Dense(3, activation = "relu", name = "layer2"),
+	layers.Dense(4, name = "layer3")
+])
 
-modelo = keras.Sequential(
-	[
-		layers.Dense(2, activation = "relu", name = "layer1"),
-		layers.Dense(3, activation = "relu", name = "layer2"),
-		layers.Dense(4, name = "layer3")
-	]
-)
-
-# Datos ingresados al modelo
-
+# Datos de entrada al modelo
 X = tf.ones((3, 3))
 y = modelo(X)
 
-print(y)
+print(f"Resultado del modelo: {y}")
 
-# Otro metodo para crear un modelo
-
-modelo_2 = keras.Sequential()
+# Otro método para crear un modelo secuencial
+modelo_2 = Sequential()
 modelo_2.add(layers.Dense(2, activation = "relu"))
 modelo_2.add(layers.Dense(3, activation = "relu"))
 modelo_2.add(layers.Dense(4))
 
-# Borrar la ultima capa
-
+# Remover la última capa de cada modelo
 modelo.pop()
 modelo_2.pop()
 
-# Mostrar contenido
-
+# Mostrar resumen del modelo
 print(modelo.summary())

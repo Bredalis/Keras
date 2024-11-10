@@ -1,18 +1,15 @@
 
 # Librerías
-
 import tensorflow as tf
-from tensorflow import keras
 from tensorflow.keras import layers
 
-# Capa densa
+# Crear una capa densa y mostrar sus pesos iniciales
+capa = layers.Dense(units = 1) # Especificar unidades para la capa densa
+print(f"Pesos iniciales: {capa.weights}")
 
-capa = layers.Dense()
-print("Pesos: \n", capa.weights)
-
-# Agregacion de pesos
-
+# Agregar datos para calcular los pesos de la capa
 X = tf.ones((1, 4))
 y = capa(X)
 
-print("Pesos agregados: \n", capa.weights)
+# Mostrar los pesos después de agregar los datos
+print(f"Pesos después de agregar datos: \n{capa.weights}")
