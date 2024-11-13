@@ -12,4 +12,4 @@ X = tf.ones((1, 4))
 y = capa(X)
 
 # Mostrar los pesos después de agregar los datos
-print(f"Pesos después de agregar datos: \n{capa.weights}")
+print(f"Pesos después de agregar datos:\n{capa.weights}")
